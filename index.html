@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lumen Clean – Never Worry About Cleaning Again</title>
+
+<!-- Open Graph / Social Media Preview Tags -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Lumen Clean – Never Worry About Cleaning Again"/>
+<meta property="og:description" content="Professional cleaners. Instant booking. Guaranteed results — backed by our Spotless Promise. Trusted by 5,000+ homes."/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&h=630&fit=crop"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:url" content="https://clariviostudio.github.io/Websitesdemo/"/>
+<meta property="og:site_name" content="Lumen Clean"/>
+
+<!-- Twitter / WhatsApp Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Lumen Clean – Never Worry About Cleaning Again"/>
+<meta name="twitter:description" content="Professional cleaners. Instant booking. Guaranteed results — backed by our Spotless Promise."/>
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&h=630&fit=crop"/>
+
+<!-- SEO Description -->
+<meta name="description" content="Professional cleaners. Instant booking. Guaranteed results — backed by our Spotless Promise. Trusted by 5,000+ homes."/>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#4A8EF5;--blue-dark:#1B5FD6;--navy:#0F1E3C;
+  --text:#0D1B2A;--muted:#6B7A90;--light:#F4F6FA;--white:#fff;
+  --border:#E2E8F0;--radius:16px;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.6;font-size:16px;overflow-x:hidden}
+
+/* CURSOR */
+.cursor{position:fixed;width:12px;height:12px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:multiply}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(74,142,245,.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+
+/* SCROLL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-44px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(44px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal-right.visible{opacity:1;transform:none}
+.reveal-scale{opacity:0;transform:scale(.93);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal-scale.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#4A8EF5,#1B5FD6);z-index:500;width:0;transition:width .08s}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.93);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(226,232,240,.8);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.07)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text);text-decoration:none}
+.nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#4A8EF5,#1B5FD6);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:transform .35s var(--spring)}
+.nav-logo:hover .nav-logo-icon{transform:rotate(-10deg) scale(1.12)}
+.nav-logo-icon svg{width:18px;height:18px;stroke:white;fill:none;stroke-width:1.8}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500;transition:color .2s;position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--blue);border-radius:2px;transition:width .3s var(--ease)}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.btn-nav{display:inline-flex;align-items:center;padding:10px 22px;border-radius:50px;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;border:none;background:linear-gradient(135deg,#4A8EF5,#1B5FD6);color:white;position:relative;overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s}
+.btn-nav:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,142,245,.4)}
+.btn-nav:active{transform:scale(.96)}
+
+/* HERO */
+.hero-section{padding:80px 5% 0}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes popIn{from{opacity:0;transform:scale(.8) translateY(8px)}to{opacity:1;transform:none}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#EFF4FF;border:1px solid #c9d9ff;padding:8px 18px;border-radius:50px;font-size:13px;color:#1B5FD6;font-weight:600;margin-bottom:28px;animation:popIn .6s var(--spring) .15s both}
+.hero-badge svg{width:14px;height:14px;stroke:#1B5FD6;fill:none}
+.hero-text h1{font-family:'DM Serif Display',serif;font-size:clamp(42px,5.5vw,72px);line-height:1.07;font-weight:400;color:var(--text);margin-bottom:22px;animation:fadeUp .8s var(--ease) .28s both}
+.hero-text h1 span{color:var(--blue)}
+.hero-text p{font-size:17px;color:var(--muted);max-width:430px;margin-bottom:36px;line-height:1.75;animation:fadeUp .8s var(--ease) .4s both}
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:42px;animation:fadeUp .8s var(--ease) .5s both}
+.btn-solid{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:50px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;border:none;background:linear-gradient(135deg,#4A8EF5,#1B5FD6);color:white;position:relative;overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s;text-decoration:none}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(74,142,245,.42)}
+.btn-solid:active{transform:scale(.96)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:50px;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;background:white;border:1.5px solid var(--border);color:var(--text);text-decoration:none;transition:all .25s var(--ease)}
+.btn-ghost:hover{border-color:#93a8c4;background:#f5f7fb;transform:translateY(-1px)}
+.play-dot{width:26px;height:26px;border-radius:50%;background:#EFF4FF;border:1.5px solid #c9d9ff;display:flex;align-items:center;justify-content:center;transition:all .25s var(--spring)}
+.btn-ghost:hover .play-dot{background:var(--blue);border-color:var(--blue);transform:scale(1.15)}
+.play-dot svg{width:8px;height:8px;fill:var(--blue);margin-left:2px;transition:fill .25s}
+.btn-ghost:hover .play-dot svg{fill:white}
+.hero-reviews{display:flex;align-items:center;gap:14px;animation:fadeUp .8s var(--ease) .62s both}
+.ravs{display:flex}
+.rav{width:36px;height:36px;border-radius:50%;border:2.5px solid white;overflow:hidden;margin-left:-10px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.rav:first-child{margin-left:0}
+.rav img{width:100%;height:100%;object-fit:cover}
+.rev-txt{font-size:14px;color:var(--muted)}
+.stars{color:#F59E0B;font-size:14px;margin-bottom:2px}
+.rev-txt strong{color:var(--text)}
+
+/* HERO IMAGE */
+.hero-img-col{position:relative;animation:fadeUp .9s var(--ease) .35s both}
+.hero-img-main{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;display:block;transition:transform .6s var(--ease)}
+.hero-img-col:hover .hero-img-main{transform:scale(1.02)}
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-card{position:absolute;background:white;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.12);padding:14px 18px;display:flex;align-items:center;gap:12px}
+.fc1{bottom:36px;left:-32px;animation:floatUp 3.8s ease-in-out infinite}
+.fc2{top:32px;right:-28px;animation:floatUp 3.8s ease-in-out 1.9s infinite}
+.fc-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fc-icon.g{background:#EDFAF3}
+.fc-icon.b{background:#EFF4FF}
+.fc-icon svg{width:18px;height:18px}
+.fc-lbl{font-size:12px;color:var(--muted)}
+.fc-val{font-size:15px;font-weight:700;color:var(--text)}
+.hero-sticker{position:absolute;bottom:-16px;right:18px;background:linear-gradient(135deg,#4A8EF5,#1B5FD6);color:white;border-radius:50px;padding:9px 20px;font-size:13px;font-weight:700;box-shadow:0 6px 20px rgba(74,142,245,.42);white-space:nowrap}
+
+/* STATS */
+.stats-wrap{background:var(--light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 5%;margin-top:60px}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{display:flex;align-items:center;gap:14px}
+.stat-ico{width:48px;height:48px;background:white;border:1px solid var(--border);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .35s var(--spring)}
+.stat:hover .stat-ico{background:#EFF4FF;border-color:#c9d9ff;transform:scale(1.1) rotate(-6deg)}
+.stat-ico svg{width:22px;height:22px;stroke:#4A8EF5;fill:none;stroke-width:1.8}
+.sn{font-size:22px;font-weight:700;color:var(--text)}
+.sl{font-size:13px;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:96px 5%}
+.si{max-width:1200px;margin:0 auto}
+.stag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.stitle{font-family:'DM Serif Display',serif;font-size:clamp(30px,4vw,48px);font-weight:400;line-height:1.1;color:var(--text);margin-bottom:14px}
+.ssub{font-size:17px;color:var(--muted);max-width:500px;line-height:1.75}
+
+/* SERVICES */
+#services{background:var(--light)}
+.svc-hdr{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:52px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:0 0 24px;overflow:hidden;transition:box-shadow .35s var(--ease),transform .35s var(--ease),border-color .3s;cursor:pointer}
+.svc-card:hover{box-shadow:0 18px 52px rgba(0,0,0,.1);transform:translateY(-7px);border-color:#c9d9ff}
+.svc-img-wrap{overflow:hidden;height:160px;margin-bottom:20px}
+.svc-img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.svc-card:hover .svc-img{transform:scale(1.07)}
+.svc-body{padding:0 22px}
+.svc-ico{width:46px;height:46px;background:#EEF3FF;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:all .3s var(--spring)}
+.svc-card:hover .svc-ico{background:var(--blue);transform:scale(1.1) rotate(-6deg)}
+.svc-card:hover .svc-ico svg{stroke:white}
+.svc-ico svg{width:20px;height:20px;stroke:#4A8EF5;fill:none;stroke-width:1.8;transition:stroke .3s}
+.svc-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.svc-card p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.svc-link{font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap .25s var(--spring),color .2s}
+.svc-link:hover{gap:10px;color:var(--blue-dark)}
+
+/* HOW IT WORKS */
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.how-steps{display:flex;flex-direction:column}
+.how-step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.how-step:last-child{border-bottom:none}
+.how-step.active .snc{background:var(--blue);color:white;border-color:var(--blue);box-shadow:0 6px 20px rgba(74,142,245,.35)}
+.how-step.active .stitle-sm{color:var(--blue)}
+.snc{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--muted);flex-shrink:0;transition:all .3s var(--spring)}
+.stitle-sm{font-size:16px;font-weight:700;margin-bottom:6px;transition:color .25s}
+.sdesc{font-size:14px;color:var(--muted);line-height:1.65;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s var(--ease),opacity .35s}
+.how-step.active .sdesc{max-height:100px;opacity:1}
+.how-img-col{position:relative}
+.how-main-img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:24px;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.how-ovl{position:absolute;inset:0;border-radius:24px;background:linear-gradient(to top,rgba(15,30,60,.38),transparent)}
+.how-badge{position:absolute;bottom:22px;left:22px;right:22px;background:white;border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.hb-ico{width:40px;height:40px;background:#EFF4FF;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hb-ico svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:1.8}
+.hb-t{font-size:14px;font-weight:700;color:var(--text)}
+.hb-s{font-size:12px;color:var(--muted)}
+
+/* GALLERY */
+.gallery-wrap{background:var(--light);padding:96px 5%}
+.g-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:16px;margin-top:48px;border-radius:20px;overflow:hidden}
+.g-cell{overflow:hidden;position:relative}
+.g-cell img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.g-cell:hover img{transform:scale(1.07)}
+.g-cell.tall{grid-row:span 2}
+.g-lbl{position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--text);opacity:0;transform:translateY(6px);transition:all .3s var(--ease)}
+.g-cell:hover .g-lbl{opacity:1;transform:none}
+
+/* TESTIMONIALS */
+.testi-wrap{background:white;padding:96px 5%}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.tc{background:var(--light);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden;transition:all .35s var(--ease)}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#4A8EF5,#1B5FD6);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.tc:hover{box-shadow:0 14px 44px rgba(0,0,0,.08);transform:translateY(-5px);background:white}
+.tc:hover::before{transform:scaleX(1)}
+.tc-stars{color:#F59E0B;font-size:14px;margin-bottom:14px}
+.tc-txt{font-size:15px;color:var(--text);line-height:1.72;margin-bottom:20px;font-style:italic}
+.tc-user{display:flex;align-items:center;gap:12px}
+.tc-av{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.tc-nm{font-size:14px;font-weight:700;color:var(--text)}
+.tc-lc{font-size:12px;color:var(--muted)}
+
+/* PRICING */
+#pricing{background:var(--light)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px;align-items:stretch}
+.pc{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:36px 30px;display:flex;flex-direction:column;transition:all .35s var(--ease)}
+.pc:not(.feat):hover{box-shadow:0 14px 44px rgba(0,0,0,.08);transform:translateY(-5px)}
+.pc.feat{background:var(--navy);border-color:var(--navy);color:white;position:relative;transform:scale(1.04);box-shadow:0 24px 64px rgba(15,30,60,.26)}
+.fbadge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#4A8EF5,#1B5FD6);color:white;font-size:12px;font-weight:700;padding:6px 18px;border-radius:50px;white-space:nowrap}
+.pc h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.pctag{font-size:14px;color:var(--muted);margin-bottom:22px}
+.pc.feat .pctag{color:rgba(255,255,255,.55)}
+.pamt{display:flex;align-items:baseline;gap:4px;margin-bottom:26px}
+.pdollar{font-size:44px;font-weight:700;line-height:1}
+.pper{font-size:14px;color:var(--muted)}
+.pc.feat .pper{color:rgba(255,255,255,.45)}
+.pfeats{list-style:none;flex:1;margin-bottom:26px}
+.pfeats li{display:flex;align-items:center;gap:10px;font-size:14px;padding:8px 0;border-bottom:1px solid var(--border)}
+.pc.feat .pfeats li{border-bottom-color:rgba(255,255,255,.1);color:rgba(255,255,255,.88)}
+.pfeats li:last-child{border-bottom:none}
+.pchk{width:16px;height:16px;flex-shrink:0;stroke:var(--blue);fill:none;stroke-width:2.5}
+.pc.feat .pchk{stroke:#7DB8FF}
+.pbtn{display:block;text-align:center;padding:14px;border-radius:50px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:all .25s var(--ease);position:relative;overflow:hidden}
+.pbtn-b{background:linear-gradient(135deg,#4A8EF5,#1B5FD6);color:white}
+.pbtn-b:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,142,245,.4)}
+.pbtn-w{background:white;color:var(--navy)}
+.pbtn-w:hover{background:#f0f3f9;transform:translateY(-1px)}
+
+/* FAQ */
+.faq-inner{max-width:720px;margin:52px auto 0}
+.faq-box{background:var(--light);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.fi{border-bottom:1px solid var(--border)}
+.fi:last-child{border-bottom:none}
+.fq{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;padding:22px 28px;font-family:inherit;font-size:16px;font-weight:500;color:var(--text);cursor:pointer;text-align:left;transition:background .15s,color .2s}
+.fq:hover{background:rgba(74,142,245,.04)}
+.fchev{width:20px;height:20px;stroke:var(--muted);fill:none;stroke-width:2;transition:transform .35s var(--ease),stroke .2s;flex-shrink:0}
+.fa{max-height:0;overflow:hidden;transition:max-height .42s var(--ease)}
+.fa-in{padding:0 28px 22px;font-size:15px;color:var(--muted);line-height:1.75}
+.fi.open .fchev{transform:rotate(180deg);stroke:var(--blue)}
+.fi.open .fa{max-height:200px}
+.fi.open .fq{color:var(--blue)}
+
+/* CTA */
+.cta-wrap{background:var(--light);padding:64px 5%}
+.cta-box{background:linear-gradient(135deg,#0A1628,#0F2050 55%,#152660);border-radius:28px;padding:72px 60px;text-align:center;max-width:960px;margin:0 auto;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(74,142,245,.18),transparent 70%);border-radius:50%;top:-120px;right:-80px;pointer-events:none}
+.cta-box::after{content:'';position:absolute;width:320px;height:320px;background:radial-gradient(circle,rgba(74,142,245,.14),transparent 70%);border-radius:50%;bottom:-90px;left:-60px;pointer-events:none}
+.cta-box h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,46px);font-weight:400;color:white;margin-bottom:14px;line-height:1.12;position:relative;z-index:1}
+.cta-box h2 span{color:#7DB8FF}
+.cta-box p{color:rgba(255,255,255,.6);font-size:16px;margin-bottom:36px;position:relative;z-index:1}
+.cta-mbtn{display:inline-flex;align-items:center;gap:10px;padding:16px 38px;border-radius:50px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;background:white;color:var(--navy);border:none;transition:all .3s var(--spring);position:relative;z-index:1}
+.cta-mbtn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.cta-bgs{display:flex;justify-content:center;gap:32px;margin-top:32px;flex-wrap:wrap;position:relative;z-index:1}
+.cbg{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:13px}
+.cbg svg{width:15px;height:15px;stroke:rgba(255,255,255,.55);fill:none;stroke-width:1.8}
+
+/* FOOTER */
+footer{background:white;border-top:1px solid var(--border);padding:56px 5% 32px}
+.fi2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.fb p{font-size:14px;color:var(--muted);line-height:1.75;max-width:260px;margin-top:14px}
+.fsoc{display:flex;gap:10px;margin-top:20px}
+.sbtn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .25s var(--spring);text-decoration:none}
+.sbtn:hover{border-color:var(--blue);background:#EFF4FF;color:var(--blue);transform:scale(1.12)}
+.sbtn svg{width:15px;height:15px;fill:currentColor}
+.fcol h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.fcol ul{list-style:none}
+.fcol li{margin-bottom:10px}
+.fcol a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .2s,transform .2s;display:inline-block}
+.fcol a:hover{color:var(--text);transform:translateX(4px)}
+.fbot{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.fbot p{font-size:13px;color:var(--muted)}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,22,44,.55);z-index:1000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px)}
+.modal-overlay.active{display:flex;animation:ovIn .3s var(--ease)}
+@keyframes ovIn{from{opacity:0}to{opacity:1}}
+.modal{background:white;border-radius:22px;padding:38px;width:100%;max-width:560px;position:relative;max-height:92vh;overflow-y:auto;animation:mdIn .4s var(--spring)}
+@keyframes mdIn{from{opacity:0;transform:scale(.88) translateY(24px)}to{opacity:1;transform:none}}
+.mc{position:absolute;top:20px;right:20px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:white;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--muted);transition:all .25s var(--spring)}
+.mc:hover{background:var(--light);transform:scale(1.1) rotate(90deg)}
+.mtag{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.mtag svg{width:14px;height:14px;stroke:var(--blue);fill:none;stroke-width:2}
+.modal h2{font-family:'DM Serif Display',serif;font-size:28px;font-weight:400;margin-bottom:6px}
+.msub{font-size:14px;color:var(--muted);margin-bottom:26px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:11px;font-family:inherit;font-size:14px;color:var(--text);background:white;transition:border-color .2s,box-shadow .2s;outline:none;appearance:none}
+.fg select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath stroke='%236B7A90' stroke-width='1.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(74,142,245,.12)}
+.fg textarea{resize:vertical;min-height:82px}
+.fsub{width:100%;padding:15px;background:linear-gradient(135deg,#4A8EF5,#1B5FD6);color:white;border:none;border-radius:50px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:all .25s var(--ease);margin-top:4px;position:relative;overflow:hidden}
+.fsub:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(74,142,245,.4)}
+.fnote{text-align:center;font-size:12px;color:var(--muted);margin-top:12px}
+
+/* RIPPLE */
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.32);transform:scale(0);animation:rip .65s linear;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+
+@media(max-width:900px){
+  .hero-inner,.how-grid,.svc-hdr{grid-template-columns:1fr}
+  .hero-img-col{display:none}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-inner,.pg,.tg{grid-template-columns:1fr}
+  .g-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .g-cell.tall{grid-row:span 1}
+  .fi2{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .frow{grid-template-columns:1fr}
+  .pc.feat{transform:none}
+  .cta-box{padding:48px 28px}
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="prog"></div>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
+
+<!-- NAV -->
+<nav id="nb">
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon"><svg viewBox="0 0 24 24" stroke="white" stroke-width="1.8" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div>
+    Lumen Clean
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How it Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <button class="btn-nav" onclick="openModal()">Book a Cleaning</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero-section">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Trusted by 5,000+ homes · Insured &amp; background-checked</div>
+      <h1>Never Worry About<br><span>Cleaning</span> Again</h1>
+      <p>Professional cleaners. Instant booking. Guaranteed results — backed by our Spotless Promise.</p>
+      <div class="hero-ctas">
+        <button class="btn-solid" onclick="openModal()">Book a Cleaning →</button>
+        <a href="#how" class="btn-ghost"><div class="play-dot"><svg viewBox="0 0 8 10"><polygon points="0,0 8,5 0,10"/></svg></div>See How It Works</a>
+      </div>
+      <div class="hero-reviews">
+        <div class="ravs">
+          <div class="rav"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=72&h=72&fit=crop&crop=face" alt=""/></div>
+          <div class="rav"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&h=72&fit=crop&crop=face" alt=""/></div>
+          <div class="rav"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=72&h=72&fit=crop&crop=face" alt=""/></div>
+        </div>
+        <div class="rev-txt"><div class="stars">★★★★★ <strong>4.9/5</strong></div>From 2,300+ verified reviews</div>
+      </div>
+    </div>
+    <div class="hero-img-col">
+      <img class="hero-img-main" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=750&fit=crop" alt="Professional cleaning"/>
+      <div class="float-card fc1">
+        <div class="fc-icon g"><svg viewBox="0 0 24 24" stroke="#22C55E" stroke-width="2.2" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><div class="fc-lbl">Today's cleans</div><div class="fc-val">142 completed ✓</div></div>
+      </div>
+      <div class="float-card fc2">
+        <div class="fc-icon b"><svg viewBox="0 0 24 24" stroke="#4A8EF5" stroke-width="1.8" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div><div class="fc-lbl">Avg. rating</div><div class="fc-val">4.9 / 5.0</div></div>
+      </div>
+      <div class="hero-sticker">Same-day availability ⚡</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-wrap">
+  <div class="stats-inner">
+    <div class="stat reveal d1"><div class="stat-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><div class="sn">5,000+</div><div class="sl">Homes Cleaned</div></div></div>
+    <div class="stat reveal d2"><div class="stat-ico"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><div class="sn">4.9★</div><div class="sl">Average Rating</div></div></div>
+    <div class="stat reveal d3"><div class="stat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="sn">Same Day</div><div class="sl">Availability</div></div></div>
+    <div class="stat reveal d4"><div class="stat-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.93-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg></div><div><div class="sn">24/7</div><div class="sl">Support</div></div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="si">
+    <div class="svc-hdr">
+      <div class="reveal-left"><div class="stag">Services</div><h2 class="stitle">Cleaning, done the<br>way it should be.</h2></div>
+      <p class="ssub reveal-right">Pick the service that fits your space. Every clean is performed by vetted, insured professionals using eco-friendly supplies.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal d1">
+        <div class="svc-img-wrap"><img class="svc-img" src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&h=220&fit=crop" alt="Home cleaning"/></div>
+        <div class="svc-body">
+          <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Home Cleaning</h3>
+          <p>Weekly, bi-weekly or one-time cleans tailored to your home. Top to bottom, always spotless.</p>
+          <a href="#" class="svc-link" onclick="openModal();return false;">Book now →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-img-wrap"><img class="svc-img" src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=400&h=220&fit=crop" alt="Deep cleaning"/></div>
+        <div class="svc-body">
+          <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div>
+          <h3>Deep Cleaning</h3>
+          <p>A thorough reset — baseboards, appliances, grout and all the details that get skipped.</p>
+          <a href="#" class="svc-link" onclick="openModal();return false;">Book now →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal d3">
+        <div class="svc-img-wrap"><img class="svc-img" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&h=220&fit=crop" alt="Office cleaning"/></div>
+        <div class="svc-body">
+          <div class="svc-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Office Cleaning</h3>
+          <p>Flexible after-hours cleans that keep your workspace polished and your team healthy.</p>
+          <a href="#" class="svc-link" onclick="openModal();return false;">Book now →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal d4">
+        <div class="svc-img-wrap"><img class="svc-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop" alt="Move out"/></div>
+        <div class="svc-body">
+          <div class="svc-ico"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Move-in / Move-out</h3>
+          <p>Deposit-back ready cleans. Inside cabinets, ovens, fridges — every surface refreshed.</p>
+          <a href="#" class="svc-link" onclick="openModal();return false;">Book now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="background:white">
+  <div class="si">
+    <div class="stag reveal" style="text-align:center">How It Works</div>
+    <h2 class="stitle reveal" style="text-align:center;max-width:540px;margin:0 auto 52px">Three steps to a spotless home.</h2>
+    <div class="how-grid">
+      <div class="how-steps reveal-left">
+        <div class="how-step active" onclick="pickStep(this,0)">
+          <div class="snc">1</div>
+          <div><div class="stitle-sm">Book Online</div><div class="sdesc">Choose your service, date and address in under 60 seconds. No phone calls required — everything handled through our easy booking flow.</div></div>
+        </div>
+        <div class="how-step" onclick="pickStep(this,1)">
+          <div class="snc">2</div>
+          <div><div class="stitle-sm">We Clean</div><div class="sdesc">A vetted Lumen professional arrives on time with eco-friendly supplies, equipment, and a meticulous eye for every detail.</div></div>
+        </div>
+        <div class="how-step" onclick="pickStep(this,2)">
+          <div class="snc">3</div>
+          <div><div class="stitle-sm">You Relax</div><div class="sdesc">Walk into a pristine home. Rate your cleaner or rebook in one tap. Our Spotless Promise covers any concern.</div></div>
+        </div>
+      </div>
+      <div class="how-img-col reveal-right">
+        <img id="hwImg" class="how-main-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=600&fit=crop" alt=""/>
+        <div class="how-ovl"></div>
+        <div class="how-badge">
+          <div class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="hb-t">Spotless Promise</div><div class="hb-s">100% satisfaction guarantee</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery-wrap">
+  <div class="si">
+    <div class="stag reveal" style="text-align:center">Our Work</div>
+    <h2 class="stitle reveal" style="text-align:center;margin:0 auto">Before &amp; after. Every time.</h2>
+    <div class="g-grid reveal">
+      <div class="g-cell tall"><img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=500&fit=crop" alt="Kitchen"/><div class="g-lbl">Kitchen Clean</div></div>
+      <div class="g-cell"><img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=260&fit=crop" alt="Bathroom"/><div class="g-lbl">Bathroom Detail</div></div>
+      <div class="g-cell"><img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&h=260&fit=crop" alt="Living room"/><div class="g-lbl">Living Room</div></div>
+      <div class="g-cell"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=260&fit=crop" alt="Bedroom"/><div class="g-lbl">Bedroom Clean</div></div>
+      <div class="g-cell"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=260&fit=crop" alt="Move-out"/><div class="g-lbl">Move-out Ready</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testi-wrap">
+  <div class="si">
+    <div class="stag reveal" style="text-align:center">Reviews</div>
+    <h2 class="stitle reveal" style="text-align:center;margin:0 auto">What our customers say.</h2>
+    <div class="tg">
+      <div class="tc reveal d1">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-txt">"I've tried four different cleaning services over the years. Lumen is on another level — they even cleaned behind the fridge without being asked."</p>
+        <div class="tc-user"><img class="tc-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=84&h=84&fit=crop&crop=face" alt="Sarah"/><div><div class="tc-nm">Sarah M.</div><div class="tc-lc">Manhattan, NY</div></div></div>
+      </div>
+      <div class="tc reveal d2">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-txt">"Booked at 9am, they arrived by 1pm. The apartment looked brand new. The same cleaner comes every week and knows exactly what I want."</p>
+        <div class="tc-user"><img class="tc-av" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=84&h=84&fit=crop&crop=face" alt="James"/><div><div class="tc-nm">James T.</div><div class="tc-lc">Chicago, IL</div></div></div>
+      </div>
+      <div class="tc reveal d3">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-txt">"Used Lumen for a move-out clean. Got my full deposit back — landlord said it was the cleanest they'd ever seen a unit left."</p>
+        <div class="tc-user"><img class="tc-av" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=84&h=84&fit=crop&crop=face" alt="Priya"/><div><div class="tc-nm">Priya K.</div><div class="tc-lc">Austin, TX</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="si">
+    <div class="stag reveal" style="text-align:center">Pricing</div>
+    <h2 class="stitle reveal" style="text-align:center;margin:0 auto 14px">Simple, upfront pricing.</h2>
+    <p class="ssub reveal" style="text-align:center;margin:0 auto">No hidden fees. Cancel or reschedule anytime. Every clean is backed by our Spotless Promise.</p>
+    <div class="pg">
+      <div class="pc reveal d1">
+        <h3>Essential</h3><div class="pctag">Perfect for regular upkeep.</div>
+        <div class="pamt"><span class="pdollar">$89</span><span class="pper">/ visit</span></div>
+        <ul class="pfeats">
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Up to 2 bedrooms</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Kitchen &amp; bathroom detail</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Eco-friendly supplies</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>4.9★ vetted cleaner</li>
+        </ul>
+        <button class="pbtn pbtn-b" onclick="openModal()">Book Essential</button>
+      </div>
+      <div class="pc feat reveal d2">
+        <div class="fbadge">Most Popular</div>
+        <h3 style="color:white">Deep Clean</h3><div class="pctag">Our most-loved service.</div>
+        <div class="pamt"><span class="pdollar" style="color:white">$179</span><span class="pper">/ visit</span></div>
+        <ul class="pfeats">
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Everything in Essential</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Baseboards, grout, vents</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Inside microwave &amp; oven</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Same-day availability</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Spotless Promise guarantee</li>
+        </ul>
+        <button class="pbtn pbtn-w" onclick="openModal()">Book Deep Clean</button>
+      </div>
+      <div class="pc reveal d3">
+        <h3>Move-in / out</h3><div class="pctag">Deposit-back ready.</div>
+        <div class="pamt"><span class="pdollar">$249</span><span class="pper">/ visit</span></div>
+        <ul class="pfeats">
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Everything in Deep Clean</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Inside cabinets &amp; drawers</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Inside fridge &amp; appliances</li>
+          <li><svg class="pchk" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Walls &amp; light fixtures</li>
+        </ul>
+        <button class="pbtn pbtn-b" onclick="openModal()">Book Move-out</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:white">
+  <div class="si">
+    <div class="stag reveal" style="text-align:center">FAQ</div>
+    <h2 class="stitle reveal" style="text-align:center;margin:0 auto">Questions, answered.</h2>
+    <div class="faq-inner"><div class="faq-box reveal">
+      <div class="fi"><button class="fq" onclick="tfaq(this)">How do I book a cleaning?<svg class="fchev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fa"><div class="fa-in">Click "Book a Cleaning" anywhere on the page, fill in your details in under 60 seconds, and we'll confirm your appointment right away. No phone calls needed.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tfaq(this)">Are your cleaners vetted and insured?<svg class="fchev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fa"><div class="fa-in">Yes — every Lumen cleaner passes a background check, identity verification, and a multi-step skills assessment. They're fully insured so you're protected on every visit.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tfaq(this)">What if I'm not satisfied with the clean?<svg class="fchev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fa"><div class="fa-in">Our Spotless Promise means we'll reclean any area you're not happy with at no extra charge. If we still don't meet expectations, you'll receive a full refund.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tfaq(this)">Can I reschedule or cancel?<svg class="fchev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fa"><div class="fa-in">Absolutely. You can reschedule or cancel anytime up to 24 hours before your appointment with no fees. We work around your schedule.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tfaq(this)">Do you bring supplies?<svg class="fchev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fa"><div class="fa-in">Yes — your cleaner arrives fully equipped with professional-grade, eco-friendly products and tools. You don't need to provide anything unless you have a specific preference.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tfaq(this)">Do you offer recurring cleans?<svg class="fchev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fa"><div class="fa-in">Yes! Weekly and bi-weekly plans are available at a discounted rate. You'll also get the same cleaner every time so they know your home perfectly.</div></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-box reveal-scale">
+    <h2>Book your cleaning in <span>60 seconds.</span></h2>
+    <p>No contracts. No hassle. Just a spotless home — as soon as today.</p>
+    <button class="cta-mbtn" onclick="openModal()">Get Started Now →</button>
+    <div class="cta-bgs">
+      <div class="cbg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Spotless Promise</div>
+      <div class="cbg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Same-day availability</div>
+      <div class="cbg"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>Eco-friendly supplies</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi2">
+    <div class="fb">
+      <a class="nav-logo" href="#"><div class="nav-logo-icon"><svg viewBox="0 0 24 24" stroke="white" stroke-width="1.8" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div>&nbsp;Lumen Clean</a>
+      <p>Premium cleaning on demand. Vetted professionals, instant booking, guaranteed results — backed by our Spotless Promise.</p>
+      <div class="fsoc">
+        <a class="sbtn" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"/></svg></a>
+        <a class="sbtn" href="#"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+        <a class="sbtn" href="#"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="fcol"><h4>Services</h4><ul><li><a href="#">Home Cleaning</a></li><li><a href="#">Deep Cleaning</a></li><li><a href="#">Office Cleaning</a></li><li><a href="#">Move-in / out</a></li></ul></div>
+    <div class="fcol"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li><li><a href="#">Contact</a></li></ul></div>
+    <div class="fcol"><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Help Center</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+  </div>
+  <div class="fbot"><p>© 2025 Lumen Clean. All rights reserved.</p><p style="color:#aab">Crafted with care ✦</p></div>
+</footer>
+
+<!-- ============================================================
+     MODAL — FIXED FORM (FormSubmit integrated)
+     ============================================================ -->
+<div class="modal-overlay" id="modal" onclick="closeOuter(event)">
+  <div class="modal">
+    <button class="mc" onclick="closeModal()">×</button>
+    <div class="mtag">
+      <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+      Book a Cleaning
+    </div>
+    <h2>Tell us about your space.</h2>
+    <p class="msub">Takes under 60 seconds. No contracts, cancel anytime.</p>
+
+    <!-- FORM START — action sends to FormSubmit → your email -->
+    <form action="https://formsubmit.co/deokarkrishna41@gmail.com" method="POST">
+
+      <!-- Hidden field: disables CAPTCHA page -->
+      <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_autoresponse" value="Thank you for booking with Lumen Clean! 🌟 We have received your request and our team will get back to you within 24 hours to confirm your appointment. If you need urgent help, feel free to reply to this email. — The Lumen Clean Team">
+<input type="hidden" name="_subject" value="We received your booking request — Lumen Clean ✓">
+
+      <div class="frow">
+        <div class="fg">
+          <label>Full name</label>
+          <input type="text" name="name" placeholder="Jane Cooper" required/>
+        </div>
+        <div class="fg">
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="+1 (555) 123-4567"/>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="jane@example.com" required/>
+      </div>
+
+      <div class="frow">
+        <div class="fg">
+          <label>Service</label>
+          <select name="service">
+            <option>Home Cleaning</option>
+            <option>Deep Cleaning</option>
+            <option>Office Cleaning</option>
+            <option>Move-in / Move-out</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Home size</label>
+          <select name="home_size">
+            <option>1 bedroom</option>
+            <option selected>2 bedrooms</option>
+            <option>3 bedrooms</option>
+            <option>4+ bedrooms</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>Preferred date</label>
+        <input type="date" name="preferred_date"/>
+      </div>
+
+      <div class="fg">
+        <label>Anything we should know?</label>
+        <textarea name="message" placeholder="Pets, entry instructions, focus areas..."></textarea>
+      </div>
+
+      <!-- SUBMIT BUTTON — type="submit", no onclick JS -->
+      <button type="submit" class="fsub">Request my cleaning</button>
+
+      <p class="fnote">By submitting, you agree to our terms. We'll never share your info.</p>
+
+    </form>
+    <!-- FORM END -->
+
+  </div>
+</div>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),crng=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function tick(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;crng.style.left=rx+'px';crng.style.top=ry+'px';requestAnimationFrame(tick)})();
+document.querySelectorAll('a,button,.svc-card,.tc,.fq,.stat').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='20px';cur.style.height='20px';crng.style.width='54px';crng.style.height='54px'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='12px';cur.style.height='12px';crng.style.width='36px';crng.style.height='36px'});
+});
+
+// SCROLL PROGRESS + NAV
+const prog=document.getElementById('prog'),nb=document.getElementById('nb');
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY,dh=document.body.scrollHeight-window.innerHeight;
+  prog.style.width=(s/dh*100)+'%';
+  nb.classList.toggle('scrolled',s>20);
+},{passive:true});
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>obs.observe(el));
+
+// HOW IT WORKS TABS
+const howSrcs=[
+  'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=600&fit=crop'
+];
+function pickStep(el,i){
+  document.querySelectorAll('.how-step').forEach(s=>s.classList.remove('active'));
+  el.classList.add('active');
+  const img=document.getElementById('hwImg');
+  img.style.opacity='0';img.style.transform='scale(.95)';
+  setTimeout(()=>{img.src=howSrcs[i];img.style.opacity='1';img.style.transform='none';},220);
+}
+document.getElementById('hwImg').style.transition='opacity .45s ease,transform .45s ease';
+
+// FAQ
+function tfaq(btn){
+  const item=btn.parentElement,was=item.classList.contains('open');
+  document.querySelectorAll('.fi').forEach(f=>f.classList.remove('open'));
+  if(!was)item.classList.add('open');
+}
+
+// MODAL
+function openModal(){document.getElementById('modal').classList.add('active');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow=''}
+function closeOuter(e){if(e.target===document.getElementById('modal'))closeModal()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// RIPPLE on all buttons
+document.querySelectorAll('button,a').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    const r=document.createElement('span');r.className='ripple';
+    const rect=this.getBoundingClientRect(),sz=Math.max(rect.width,rect.height)*2;
+    r.style.cssText=`width:${sz}px;height:${sz}px;left:${e.clientX-rect.left-sz/2}px;top:${e.clientY-rect.top-sz/2}px;position:absolute;pointer-events:none`;
+    if(getComputedStyle(this).position==='static')this.style.position='relative';
+    this.appendChild(r);setTimeout(()=>r.remove(),700);
+  });
+});
+</script>
+</body>
+</html>
